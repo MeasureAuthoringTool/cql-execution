@@ -1,3 +1,8 @@
+/* eslint-disable
+    no-unused-vars,
+*/
+// TODO: This file was created by bulk-decaffeinate.
+// Fix any style issues and re-enable lint.
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
@@ -20,7 +25,7 @@ describe('Date', function() {
     d.isDate.should.be.true();
     d.year.should.equal(2012);
     return [ 'month', 'day' ].map((field) => should.not.exist(d[field]));
-});
+  });
 
   it('should execute month precision correctly', function() {
     const d = this.month.exec(this.ctx);
@@ -28,7 +33,7 @@ describe('Date', function() {
     d.year.should.equal(2012);
     d.month.should.equal(2);
     return [ 'day' ].map((field) => should.not.exist(d[field]));
-});
+  });
 
   return it('should execute day precision correctly', function() {
     const d = this.day.exec(this.ctx);
@@ -63,7 +68,7 @@ describe('DateComponentFrom', function() {
       Month: 3,
       Day: null
     });
-});
+  });
 
   return it('should return null for null date', function() {
     return should(this.nullDate.exec(this.ctx)).be.null();
