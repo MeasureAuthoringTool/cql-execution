@@ -1,4 +1,4 @@
-# Acute Pharyngitis and ED/Ambulatory Visits
+// Acute Pharyngitis and ED/Ambulatory Visits
 module.exports.p1 = {
   "resourceType": "Bundle",
   "id": "example2",
@@ -71,4 +71,4 @@ module.exports.p1 = {
           }
     }
   ]
-}
+};
