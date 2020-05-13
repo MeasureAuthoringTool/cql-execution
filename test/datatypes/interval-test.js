@@ -1,21 +1,9 @@
-/* eslint-disable
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
 /* eslint-env mocha */
-/*
- * decaffeinate suggestions:
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const should = require('should');
 const setup = require('./interval-setup');
-const { Interval } = require('../../lib/datatypes/interval');
-const { DateTime } = require('../../lib/datatypes/datetime');
-const { Uncertainty } = require('../../lib/datatypes/uncertainty');
-const cmp = require('../../lib/util/comparison');
+const { Interval } = require('../../src/datatypes/interval');
+const { DateTime } = require('../../src/datatypes/datetime');
+const { Uncertainty } = require('../../src/datatypes/uncertainty');
 
 const xy = obj => [obj.x, obj.y];
 

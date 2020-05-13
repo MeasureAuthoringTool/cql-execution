@@ -1,14 +1,7 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const should = require('should');
 const setup = require('../../setup');
 const data = require('./data');
-const str = require('../../../lib/elm/string');
+const str = require('../../../src/elm/string');
 
 describe('Concat', function() {
   this.beforeEach(function() {

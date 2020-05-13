@@ -1,17 +1,5 @@
-/* eslint-disable
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS205: Consider reworking code to avoid use of IIFEs
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const should = require('should');
-const setup = require('../../setup');
-const { Quantity, doAddition, doSubtraction, doMultiplication, doDivision } = require('../../../lib/datatypes/quantity');
+const { Quantity, doAddition, doSubtraction, doMultiplication, doDivision } = require('../../../src/datatypes/quantity');
 
 describe('Quantity', function() {
   it('should allow creation of Quantity with valid ucum units', () => should.doesNotThrow(() => new Quantity(42.424242, 'mm')));

@@ -1,28 +1,15 @@
-/* eslint-disable
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const should = require('should');
 const setup = require('../../setup');
 const data = require('./data');
-const { Interval } = require('../../../lib/datatypes/interval');
-const { DateTime } = require('../../../lib/datatypes/datetime');
+const { Interval } = require('../../../src/datatypes/interval');
+const { DateTime } = require('../../../src/datatypes/datetime');
 const { MIN_INT_VALUE,
   MAX_INT_VALUE,
   MIN_FLOAT_VALUE,
   MIN_FLOAT_PRECISION_VALUE,
   MAX_FLOAT_VALUE,
-  MIN_DATE_VALUE,
   MIN_DATETIME_VALUE,
-  MAX_DATETIME_VALUE,
-  MIN_TIME_VALUE } = require('../../../lib/util/math');
+  MAX_DATETIME_VALUE } = require('../../../src/util/math');
 
 describe('Interval', function() {
   this.beforeEach(function() {

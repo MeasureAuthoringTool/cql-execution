@@ -24,10 +24,10 @@ const type = require ('./type');
 const overloaded = require ('./overloaded');
 
 const libs = [expression, aggregate, arithmetic, clinical, comparison, conditional, datetime, declaration,
-        external, instance, interval, list, literal, logical, nullological, parameters, query, quantity, ratio,
-         reusable, string, structured, type, overloaded];
+  external, instance, interval, list, literal, logical, nullological, parameters, query, quantity, ratio,
+  reusable, string, structured, type, overloaded];
 for (const lib of libs ) {
   for (const element of Object.keys(lib)) {
-    module.exports[element] = lib[element]
+    module.exports[element] = lib[element];
   }
 }

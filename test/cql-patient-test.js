@@ -1,20 +1,6 @@
-/* eslint-disable
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
 /* eslint-env mocha */
-/*
- * decaffeinate suggestions:
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * DS104: Avoid inline assignments
- * DS205: Consider reworking code to avoid use of IIFEs
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-const should = require('should');
-const { Patient } = require('../lib/cql-patient');
-const DT = require('../lib/datatypes/datatypes');
+const { Patient } = require('../src/cql-patient');
+const DT = require('../src/datatypes/datatypes');
 
 describe('Record', function() {
   this.beforeEach(function() {
@@ -65,9 +51,9 @@ describe('Record', function() {
   });
 
   it('should get dates', function() {
-    this.cndRecord.getDate('onsetDateTime').should.eql(new DT.DateTime.parse('1982-03-12'));
-    this.cndRecord.getDate('abatementDateTime').should.eql(new DT.DateTime.parse('1982-03-26'));
-    return this.cndRecord.getDate('issued').should.eql(new DT.DateTime.parse('1982-03-15T15:15:00'));
+    this.cndRecord.getDate('onsetDateTime').should.eql(DT.DateTime.parse('1982-03-12'));
+    this.cndRecord.getDate('abatementDateTime').should.eql(DT.DateTime.parse('1982-03-26'));
+    return this.cndRecord.getDate('issued').should.eql(DT.DateTime.parse('1982-03-15T15:15:00'));
   });
 
   it('should get intervals', function() {
@@ -75,7 +61,7 @@ describe('Record', function() {
   });
 
   return it('should get date or interval', function() {
-    this.cndRecord.getDateOrInterval('issued').should.eql(new DT.DateTime.parse('1982-03-15T15:15:00'));
+    this.cndRecord.getDateOrInterval('issued').should.eql(DT.DateTime.parse('1982-03-15T15:15:00'));
     return this.encRecord.getDateOrInterval('period').should.eql(new DT.Interval(DT.DateTime.parse('1978-07-15T10:00'), DT.DateTime.parse('1978-07-15T10:45')));
   });
 });
@@ -112,7 +98,6 @@ describe('Patient', function() {
     this.patient.gender.should.equal('M');
     return this.patient.birthDate.should.eql(DT.DateTime.parse('1974-07-12T11:15'));
   });
-
   it('should find records by profile', function() {
     const encounters = this.patient.findRecords('encounter-qicore-qicore-encounter');
     encounters.length.should.equal(1);

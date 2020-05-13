@@ -1,18 +1,3 @@
-/* eslint-disable
-    constructor-super,
-    no-constant-condition,
-    no-this-before-super,
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
-/*
- * decaffeinate suggestions:
- * DS001: Remove Babel/TypeScript constructor workaround
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-
 // Copyright (c) 2014 The MITRE Corporation
 // All rights reserved.
 // 
@@ -40,96 +25,30 @@
 // POSSIBILITY OF SUCH DAMAGE.
 const DT = require('../cql-datatypes');
 const CORE = require('./core');
-let {
+const { Attachment,
+  BackboneElement,
+  DomainResource,
+  ContactPoint,
+  HumanName,
+  Address,
+  Period,
+  Resource,
+  Reference,
+  CodeableConcept,
+  Identifier,
   Element
-} = CORE;
-let {
-  Resource
-} = CORE;
-const {
-  Timing
-} = CORE;
-const {
-  Period
-} = CORE;
-const {
-  Parameters
-} = CORE;
-const {
-  Coding
-} = CORE;
-({
-  Resource
-} = CORE);
-const {
-  Range
-} = CORE;
-const {
-  Quantity
-} = CORE;
-const {
-  Attachment
-} = CORE;
-const {
-  BackboneElement
-} = CORE;
-const {
-  DomainResource
-} = CORE;
-const {
-  ContactPoint
-} = CORE;
-const {
-  ElementDefinition
-} = CORE;
-const {
-  Extension
-} = CORE;
-const {
-  HumanName
-} = CORE;
-const {
-  Address
-} = CORE;
-const {
-  Ratio
-} = CORE;
-const {
-  SampledData
-} = CORE;
-const {
-  Reference
-} = CORE;
-const {
-  CodeableConcept
-} = CORE;
-const {
-  Identifier
-} = CORE;
-const {
-  Narrative
-} = CORE;
-({
-  Element
-} = CORE);
+} = require('./core');
 
-/** 
+/**
 Embedded class
 @class ContactComponent
 @exports  ContactComponent as ContactComponent
 */
 class ContactComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   The nature of the relationship between the patient and the contact person.
   @returns {Array} an array of {@link CodeableConcept} objects
@@ -191,16 +110,9 @@ Embedded class
 */
 class AnimalComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   Identifies the high level categorization of the kind of animal.
   @returns {CodeableConcept}
@@ -228,16 +140,9 @@ Embedded class
 */
 class PatientLinkComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   The other patient resource that the link refers to.
   @returns {Reference}
@@ -258,16 +163,9 @@ Demographics and other administrative information about a person or animal recei
 */
 class Patient extends DomainResource {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   An identifier that applies to this person as a patient.
   @returns {Array} an array of {@link Identifier} objects
@@ -425,8 +323,5 @@ class Patient extends DomainResource {
   */
   active() { return this.json['active']; }
 }
-  
-
-
 
 module.exports.Patient = Patient;

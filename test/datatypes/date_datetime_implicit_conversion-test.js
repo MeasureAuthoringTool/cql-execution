@@ -1,19 +1,8 @@
-/* eslint-disable
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
 /* eslint-env mocha */
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const should = require('should');
-const { DateTime, Date } = require('../../lib/datatypes/datetime');
-const { jsDate } = require('../../lib/util/util');
-const { Uncertainty } = require('../../lib/datatypes/uncertainty');
-
+const { DateTime, Date } = require('../../src/datatypes/datetime');
+const { jsDate } = require('../../src/util/util');
+const { Uncertainty } = require('../../src/datatypes/uncertainty');
 
 describe('Overlapping DateTime and Date units', () => it('should match', function() {
   DateTime.Unit.DAY.should.equal(Date.Unit.DAY);

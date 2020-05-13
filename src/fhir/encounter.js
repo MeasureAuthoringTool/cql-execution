@@ -1,19 +1,3 @@
-/* eslint-disable
-    constructor-super,
-    no-constant-condition,
-    no-this-before-super,
-    no-undef,
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
-/*
- * decaffeinate suggestions:
- * DS001: Remove Babel/TypeScript constructor workaround
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-
 // Copyright (c) 2014 The MITRE Corporation
 // All rights reserved.
 // 
@@ -39,98 +23,25 @@
 // WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 // POSSIBILITY OF SUCH DAMAGE.
-const DT = require('../cql-datatypes');
-const CORE = require('./core');
-let {
-  Element
-} = CORE;
-let {
-  Resource
-} = CORE;
 const {
-  Timing
-} = CORE;
-const {
-  Period
-} = CORE;
-const {
-  Parameters
-} = CORE;
-const {
-  Coding
-} = CORE;
-({
-  Resource
-} = CORE);
-const {
-  Range
-} = CORE;
-const {
-  Quantity
-} = CORE;
-const {
-  Attachment
-} = CORE;
-const {
-  BackboneElement
-} = CORE;
-const {
-  DomainResource
-} = CORE;
-const {
-  ContactPoint
-} = CORE;
-const {
-  ElementDefinition
-} = CORE;
-const {
-  Extension
-} = CORE;
-const {
-  HumanName
-} = CORE;
-const {
-  Address
-} = CORE;
-const {
-  Ratio
-} = CORE;
-const {
-  SampledData
-} = CORE;
-const {
-  Reference
-} = CORE;
-const {
-  CodeableConcept
-} = CORE;
-const {
+  BackboneElement,
+  Period,
+  DomainResource,
+  Reference,
+  CodeableConcept,
   Identifier
-} = CORE;
-const {
-  Narrative
-} = CORE;
-({
-  Element
-} = CORE);
+} = require( './core');
 
-/** 
+/**
 Embedded class
 @class EncounterParticipantComponent
 @exports  EncounterParticipantComponent as EncounterParticipantComponent
 */
 class EncounterParticipantComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   Role of participant in encounter.
   @returns {Array} an array of {@link CodeableConcept} objects
@@ -157,16 +68,9 @@ Embedded class
 */
 class EncounterHospitalizationAccomodationComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   The bed that is assigned to the patient.
   @returns {Reference}
@@ -188,16 +92,9 @@ Embedded class
 */
 class EncounterHospitalizationComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   Pre-admission identifier.
   @returns {Identifier}
@@ -294,16 +191,9 @@ Embedded class
 */
 class EncounterLocationComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   The location where the encounter takes place.
   @returns {Reference}
@@ -324,16 +214,9 @@ An interaction between a patient and healthcare provider(s) for the purpose of p
 */
 class Encounter extends DomainResource {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   Identifier(s) by which this encounter is known.
   @returns {Array} an array of {@link Identifier} objects
@@ -451,7 +334,4 @@ class Encounter extends DomainResource {
   partOf() { if (this.json['partOf']) { return new Reference(this.json['partOf']); } }
 }
   
-
-
-
 module.exports.Encounter = Encounter;

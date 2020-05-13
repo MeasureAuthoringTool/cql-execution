@@ -1,18 +1,3 @@
-/* eslint-disable
-    constructor-super,
-    no-constant-condition,
-    no-this-before-super,
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
-/*
- * decaffeinate suggestions:
- * DS001: Remove Babel/TypeScript constructor workaround
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-
 // Copyright (c) 2014 The MITRE Corporation
 // All rights reserved.
 // 
@@ -39,97 +24,25 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 // POSSIBILITY OF SUCH DAMAGE.
 const DT = require('../cql-datatypes');
-const CORE = require('./core');
-let {
-  Element
-} = CORE;
-let {
-  Resource
-} = CORE;
 const {
-  Timing
-} = CORE;
-const {
-  Period
-} = CORE;
-const {
-  Parameters
-} = CORE;
-const {
-  Coding
-} = CORE;
-({
-  Resource
-} = CORE);
-const {
-  Range
-} = CORE;
-const {
-  Quantity
-} = CORE;
-const {
-  Attachment
-} = CORE;
-const {
-  BackboneElement
-} = CORE;
-const {
-  DomainResource
-} = CORE;
-const {
-  ContactPoint
-} = CORE;
-const {
-  ElementDefinition
-} = CORE;
-const {
-  Extension
-} = CORE;
-const {
-  HumanName
-} = CORE;
-const {
-  Address
-} = CORE;
-const {
-  Ratio
-} = CORE;
-const {
-  SampledData
-} = CORE;
-const {
-  Reference
-} = CORE;
-const {
-  CodeableConcept
-} = CORE;
-const {
-  Identifier
-} = CORE;
-const {
-  Narrative
-} = CORE;
-({
-  Element
-} = CORE);
+  Quantity,
+  BackboneElement,
+  DomainResource,
+  Reference,
+  CodeableConcept,
+  Identifier,
+} = require('./core');
 
-/** 
+/**
 Embedded class
 @class ConditionStageComponent
 @exports  ConditionStageComponent as ConditionStageComponent
 */
 class ConditionStageComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   A simple summary of the stage such as "Stage 3". The determination of the stage is disease-specific.
   @returns {CodeableConcept}
@@ -156,16 +69,9 @@ Embedded class
 */
 class ConditionEvidenceComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   A manifestation or symptom that led to the recording of this condition.
   @returns {CodeableConcept}
@@ -192,16 +98,9 @@ Embedded class
 */
 class ConditionLocationComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   Code that identifies the structural location.
   @returns {CodeableConcept}
@@ -223,16 +122,9 @@ Embedded class
 */
 class ConditionDueToComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   Code that identifies the target of this relationship. The code takes the place of a detailed instance target.
   @returns {CodeableConcept}
@@ -254,16 +146,9 @@ Embedded class
 */
 class ConditionOccurredFollowingComponent extends BackboneElement {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   Code that identifies the target of this relationship. The code takes the place of a detailed instance target.
   @returns {CodeableConcept}
@@ -284,16 +169,9 @@ Use to record detailed information about conditions, problems or diagnoses recog
 */
 class Condition extends DomainResource {
   constructor(json) {
-    {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;/)[1];
-      eval(`${thisName} = this;`);
-    }
-    this.json = json;
-    super(this.json);
+    super(json);
   }
+
   /**
   This records identifiers associated with this condition that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
   @returns {Array} an array of {@link Identifier} objects
@@ -434,8 +312,5 @@ class Condition extends DomainResource {
   */
   notes() { return this.json['notes']; }
 }
-  
-
-
 
 module.exports.Condition = Condition;

@@ -1,19 +1,7 @@
-/* eslint-disable
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-const should = require('should');
 const setup = require('../../setup');
 const data = require('./data');
-const { DateTime } = require('../../../lib/datatypes/datetime');
-const { Code, Concept } = require('../../../lib/datatypes/clinical');
-const { Quantity } = require('../../../lib/datatypes/quantity');
+const { Code, Concept } = require('../../../src/datatypes/clinical');
+const { Quantity } = require('../../../src/datatypes/quantity');
 
 describe('Instance', function() {
   this.beforeEach(function() {

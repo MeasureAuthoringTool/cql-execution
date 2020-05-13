@@ -1,20 +1,12 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS205: Consider reworking code to avoid use of IIFEs
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const should = require('should');
 const setup = require('../../setup');
 const data = require('./data');
 const vsets = require('./valuesets');
-const DT = require('../../../lib/datatypes/datatypes');
-const { PatientContext } =  require('../../../lib/cql');
-const { Uncertainty } = require('../../../lib/datatypes/uncertainty');
+const DT = require('../../../src/datatypes/datatypes');
+const { PatientContext } =  require('../../../src/cql');
+const { Uncertainty } = require('../../../src/datatypes/uncertainty');
 const { p1, p2, p3 } = require('./patients');
-const { PatientSource} = require('../../../lib/cql-patient');
+const { PatientSource} = require('../../../src/cql-patient');
 
 
 describe('ValueSetDef', function() {

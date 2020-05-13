@@ -1,18 +1,9 @@
-/* eslint-disable
-    no-unused-vars,
-*/
-// TODO: This file was created by bulk-decaffeinate.
-// Fix any style issues and re-enable lint.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-let Executor;
-module.exports.Executor = (Executor = class Executor {
+const { Results } = require('./results');
+const { UnfilteredContext, PatientContext } = require('./context');
 
-  constructor(library,codeService,parameters) {
+class Executor {
+
+  constructor(library, codeService, parameters) {
     this.library = library;
     this.codeService = codeService;
     this.parameters = parameters;
@@ -39,7 +30,7 @@ module.exports.Executor = (Executor = class Executor {
     Results(r = new Results());
     const expr = this.library.expressions[expression];
     while (expr && (p = patientSource.currentPatient())) {
-      const patient_ctx = new PatientContext(this.library,p,this.codeService,this.parameters);
+      const patient_ctx = new PatientContext(this.library, p, this.codeService, this.parameters);
       r.recordPatientResult(patient_ctx, expression, expr.execute(patient_ctx));
       patientSource.nextPatient();
     }
@@ -47,24 +38,22 @@ module.exports.Executor = (Executor = class Executor {
   }
 
   exec(patientSource, executionDateTime) {
-    let r;
-    Results(r = this.exec_patient_context(patientSource, executionDateTime));
-    const unfilteredContext = new UnfilteredContext(this.library,r,this.codeService,this.parameters);
+    const r = this.exec_patient_context(patientSource, executionDateTime);
+    const unfilteredContext = new UnfilteredContext(this.library, r, this.codeService, this.parameters);
     for (let key in this.library.expressions) {
       const expr = this.library.expressions[key];
       if (expr.context === 'Unfiltered') {
-        r.recordUnfilteredResult( key, expr.exec(unfilteredContext));
+        r.recordUnfilteredResult(key, expr.exec(unfilteredContext));
       }
     }
     return r;
   }
 
   exec_patient_context(patientSource, executionDateTime) {
-    let r;
+    const r = new Results();
     let p;
-    Results(r = new Results());
     while ((p = patientSource.currentPatient())) {
-      const patient_ctx = new PatientContext(this.library,p,this.codeService,this.parameters,executionDateTime);
+      const patient_ctx = new PatientContext(this.library, p, this.codeService, this.parameters, executionDateTime);
       for (let key in this.library.expressions) {
         const expr = this.library.expressions[key];
         if (expr.context === 'Patient') {
@@ -75,7 +64,8 @@ module.exports.Executor = (Executor = class Executor {
     }
     return r;
   }
-});
+}
 
-var { Results } = require('./results');
-var { UnfilteredContext,PatientContext } = require('./context');
+module.exports = {
+  Executor
+};
